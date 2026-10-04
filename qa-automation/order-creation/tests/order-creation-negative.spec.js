@@ -24,7 +24,7 @@ const {
 
 test.describe('OMS Order Creation - Negative & Edge Cases', () => {
 
-  test('rejects order creation when customer name is missing', async ({ page }) => {
+  test('rejects order creation when customer name is missing @smoke @regression', async ({ page }) => {
     await gotoWithAuth(page, '/orders/new');
 
     const customerName = page.locator('#customer_name');
@@ -40,7 +40,7 @@ test.describe('OMS Order Creation - Negative & Edge Cases', () => {
   });
 
 
-  test('prevents submission when order item details are missing', async ({ page }) => {
+  test('prevents submission when order item details are missing @regression', async ({ page }) => {
     await gotoWithAuth(page, '/orders/new');
 const runId = Date.now();
 
@@ -69,7 +69,7 @@ const runId = Date.now();
   });
 
 
-  test('validates minimum quantity on order item', async ({ page }) => {
+  test('validates minimum quantity on order item @regression', async ({ page }) => {
     await gotoWithAuth(page, '/orders/new');
 const runId = Date.now();
 
@@ -108,7 +108,7 @@ const runId = Date.now();
   });
 
 
-  test('creates order with multiple valid items', async ({ page }) => {
+  test('creates order with multiple valid items @smoke @regression', async ({ page }) => {
     await gotoWithAuth(page, '/orders/new');
 const runId = Date.now();
 
@@ -193,6 +193,7 @@ const runId = Date.now();
   });
 
 });
+
 
 
 
